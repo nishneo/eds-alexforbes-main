@@ -1,0 +1,12 @@
+version: 1
+
+sitemaps:
+  seo:
+    origin: https://invest.alexforbes.com
+    lastmod: YYYY-MM-DD
+    default: en-US
+    languages:
+      en:
+        source: /query-index.json
+        destination: /sitemap.xml
+        hreflang: en-US

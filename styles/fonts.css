@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'Hero New';
+  src: url('../fonts/HeroNew-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hero New semibold';
+  src: url('../fonts/HeroNew-SemiBold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hero New bold';
+  src: url('../fonts/HeroNew-Bold.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

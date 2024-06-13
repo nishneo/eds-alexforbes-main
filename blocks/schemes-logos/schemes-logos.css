@@ -1,0 +1,36 @@
+.schemes-logos.block > ul {
+  display: flex;
+  padding-inline-start: 0;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.schemes-logos.block > ul > li {
+  margin: 0.8em;
+  cursor: pointer;
+}
+
+.schemes-logos.block img {
+  filter: grayscale(80%);
+  height: 66px;
+  width: 120px;
+  object-fit: cover;
+  transition: 0.5s all;
+}
+
+.schemes-logos.block a:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+@media (width >= 600px) {
+  .schemes-logos.block > ul > li {
+    margin: 1em;
+  }
+
+  .schemes-logos.block img {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,11 @@
+user-agent: *
+allow: /
+
+disallow: /tools/
+disallow: /common/
+disallow: /drafts/
+disallow: /**/modals/
+disallow: /**/blocks/
+
+
+sitemap: https://invest.alexforbes.com/sitemap-index.xml

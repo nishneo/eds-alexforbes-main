@@ -1,0 +1,39 @@
+main .files {
+  display: flex;
+  gap: 20px;
+  margin: 20px 0;
+  flex-flow: column wrap;
+}
+
+main .files a:any-link {
+  margin: 0;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 25%);
+  border-radius: 6px;
+  padding: 10px 20px;
+  font-weight: normal;
+  white-space: normal;
+  text-align: left;
+}
+
+main .files a:any-link::before {
+  content: url('/../../icons/download.svg');
+  margin-right: 10px;
+  position: relative;
+  top: 2px;
+}
+
+@media (width >= 600px) {
+  main .files {
+    flex-direction: row;
+  }
+
+  main .files.vertical {
+    flex-direction: column;
+  }
+}
+
+.files a.button:any-link, button{
+  font-family: var(--body-font-family);
+}

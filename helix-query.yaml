@@ -1,0 +1,376 @@
+version: 1
+
+indices:
+  pages:
+    include:
+      - '/**'
+    exclude:
+      - '/drafts/**'
+      - '/.helix/**'
+      - '/**/common/**'
+      - '/tools/**'
+      - '/**/drafts/**'
+      - 'images/**'
+      - '/footer'
+      - '/**/footer'
+      - '/**/nav'
+      - '/nav'
+      - '/**/fragments/**'
+      - '/includes/**'
+      - '/**/includes/**'
+      - '/**/authors/**'
+      - '/**/draft/**'
+    target: '/query-index'
+    properties:
+      author:
+        select: head > meta[name="authors"]
+        values: |
+          match(attribute(el, 'content'), ' ?([^,]+)')
+      title:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      imageAlt:
+        select: head > meta[property="og:image:alt"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      tags:
+        select: head > meta[property="article:tag"]
+        values: |
+          attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  blogs-je:
+    include:
+      - /je/en/blogs/publish/**
+    exclude:
+      - '/je/en/blogs/'
+      - '/drafts/**'
+      - '/**/drafts/**'
+      - '/footer'
+      - '/**/footer'
+      - '/nav'
+      - '/**/nav'
+      - '/fragments/**'
+      - '/**/fragments/**'
+      - '/**/includes'
+    target: /je/en/blogs-index.json
+    properties:
+      author:
+        select: head > meta[name="authors"]
+        values: |
+          match(attribute(el, 'content'), ' ?([^,]+)')
+      title:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      imageAlt:
+        select: head > meta[property="og:image:alt"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      tags:
+        select: head > meta[property="article:tag"]
+        values: |
+          attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  sitemap-je:
+    include:
+      - /je/en/**
+    exclude:
+      - '/drafts/**'
+      - '/**/drafts/**'
+      - '/**/common/**'
+      - 'images/**'
+      - '/footer'
+      - '/**/footer'
+      - '/nav'
+      - '/**/nav'
+      - '/fragments/**'
+      - '/**/fragments/**'
+      - '/**/includes'
+      - '/modals/**'
+      - '/**/modals/**'
+    target: /je/en/query-index.json
+    properties:
+      author:
+        select: head > meta[name="authors"]
+        values: |
+          match(attribute(el, 'content'), ' ?([^,]+)')
+      title:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      imageAlt:
+        select: head > meta[property="og:image:alt"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      tags:
+        select: head > meta[property="article:tag"]
+        values: |
+          attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+      
+  blogs-na:
+    include:
+      - /na/en/blogs/publish/**
+    exclude:
+      - '/na/en/blogs/'
+      - '/drafts/**'
+      - '/**/drafts/**'
+      - '/footer'
+      - '/**/footer'
+      - '/nav'
+      - '/**/nav'
+      - '/fragments/**'
+      - '/**/fragments/**'
+      - '/**/includes'
+    target: /na/en/blogs-index.json
+    properties:
+      author:
+        select: head > meta[name="authors"]
+        values: |
+          match(attribute(el, 'content'), ' ?([^,]+)')
+      title:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      imageAlt:
+        select: head > meta[property="og:image:alt"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      tags:
+        select: head > meta[property="article:tag"]
+        values: |
+          attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  sitemap-na:
+    include:
+      - /na/en/**
+    exclude:
+      - '/drafts/**'
+      - '/**/drafts/**'
+      - '/**/common/**'
+      - 'images/**'
+      - '/footer'
+      - '/**/footer'
+      - '/nav'
+      - '/**/nav'
+      - '/fragments/**'
+      - '/**/fragments/**'
+      - '/**/includes'
+      - '/modals/**'
+      - '/**/modals/**'
+    target: /na/en/query-index.json
+    properties:
+      author:
+        select: head > meta[name="authors"]
+        values: |
+          match(attribute(el, 'content'), ' ?([^,]+)')
+      title:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      imageAlt:
+        select: head > meta[property="og:image:alt"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      tags:
+        select: head > meta[property="article:tag"]
+        values: |
+          attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+      
+  blogs-za:
+    include:
+      - /za/en/blogs/publish/**
+    target: /za/en/blogs-index.json
+    properties:
+      author:
+        select: head > meta[name="authors"]
+        values: |
+          match(attribute(el, 'content'), ' ?([^,]+)')
+      title:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      imageAlt:
+        select: head > meta[property="og:image:alt"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      tags:
+        select: head > meta[property="article:tag"]
+        values: |
+          attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')
+
+  sitemap-za:
+    include:
+      - /za/en/**
+    exclude:
+      - '/drafts/**'
+      - '/**/drafts/**'
+      - '/**/common/**'
+      - 'images/**'
+      - '/footer'
+      - '/**/footer'
+      - '/nav'
+      - '/**/nav'
+      - '/fragments/**'
+      - '/**/fragments/**'
+      - '/**/includes'
+      - '/modals/**'
+      - '/**/modals/**'
+    target: /za/en/query-index.json
+    properties:
+      author:
+        select: head > meta[name="authors"]
+        values: |
+          match(attribute(el, 'content'), ' ?([^,]+)')
+      title:
+        select: main h1:first-of-type
+        value: |
+          textContent(el)
+      date:
+        select: head > meta[name="publication-date"]
+        value: |
+          dateValue(attribute(el, 'content'), 'MM-DD-YYYY')
+      image:
+        select: head > meta[property="og:image"]
+        value: |
+          match(attribute(el, 'content'), 'https:\/\/[^/]+(\/.*)')
+      imageAlt:
+        select: head > meta[property="og:image:alt"]
+        value: |
+          attribute(el, 'content')
+      description:
+        select: head > meta[name="description"]
+        value: |
+          attribute(el, 'content')
+      tags:
+        select: head > meta[property="article:tag"]
+        values: |
+          attribute(el, 'content')
+      robots:
+        select: head > meta[name="robots"]
+        value: |
+          attribute(el, 'content')
+      lastModified:
+        select: none
+        value: |
+          parseTimestamp(headers['last-modified'], 'ddd, DD MMM YYYY hh:mm:ss GMT')

@@ -1,0 +1,18 @@
+main .box {
+  padding: 14px;
+  background: var(--color-white);
+  box-shadow: 0 2px 12px 0 rgb(0 0 0 / 25%);
+  border-radius: 4px;
+}
+
+main .box.text-left {
+  text-align: left;
+}
+
+main .box.text-right {
+  text-align: right;
+}
+
+main .box.text-center {
+  text-align: center;
+}

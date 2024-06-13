@@ -1,0 +1,211 @@
+.cards > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(278px, 1fr));
+  grid-gap: 16px;
+}
+
+.cards > ul > li {
+  border: 1px solid var(--dark-color);
+  background-color: var(--background-color)
+}
+
+.cards .cards-card-body {
+  margin: 16px;
+}
+
+.cards .cards-card-image {
+  line-height: 0;
+}
+
+.cards .cards-card-body > *:first-child {
+  margin-top: 0;
+}
+
+.cards > ul > li img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.cards.blog > ul > li img {
+  aspect-ratio: 3 / 2;
+  border-radius: 5px 5px 0 0;
+}
+
+.cards.teaser-card .cards-card-image img{
+  background: transparent 0% 0% no-repeat padding-box;
+  box-shadow: 10px 10px 40px var(--box-shadow);
+  opacity: 0.76;
+  width: 325px;
+  height: 338px;
+  display: block;
+}
+
+.cards.icons > ul > li > .cards-card-icon,
+.cards.icons > ul > li > .cards-card-image {
+  display: flex;
+  justify-content: center;
+}
+
+.cards.icons > ul > li .cards-card-icon img,
+.cards.icons > ul > li .cards-card-icon .icon,
+.cards.icons > ul > li .cards-card-image img,
+.cards.icons > ul > li .cards-card-image .icon {
+  width: 64px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+/* cards blog variation */
+.cards.blog > ul > li,
+.cards.icons > ul > li {
+  background: var(--color-card-bg) 0% 0% no-repeat padding-box;
+  box-shadow: 5px 5px 10px var(--card-box-shadow);
+}
+
+.cards.blog .cards-card-body,
+.cards.icons .cards-card-body {
+  padding: 14px 22px;
+  margin: 0;
+}
+
+.cards.icons > ul > li {
+  text-align: center;
+  padding-top: 22px;
+}
+
+/* teaser card variation */
+.cards.teaser-card .cards-card-body strong{
+  font: normal normal 600 16px/23px var(--body-font-family);
+  color: var(--color-white);;
+  text-transform: uppercase;
+  display: block;
+}
+
+/* teaser card variation ends */
+
+.cards.blog .cards-card-body > p > strong,
+.cards.icons .cards-card-body > p > strong {
+  font: normal normal 600 16px / 23px var(--body-semibold-font-family);
+  color: var(--color-brand-title);
+} 
+
+.cards.blog .cards-card-body > p,
+.cards.icons .cards-card-body > p {
+  font: normal normal normal 12px/20px var(--body-font-family);
+  color: var(--color-card-body-accessible);
+}
+
+.cards.blog .cards-card-body a,
+.cards.icons .cards-card-body a {
+  background: none;
+  padding: 0;
+  font: normal normal normal 12px/20px var(--body-font-family);
+  color: var(--color-info-accent-accessible);
+  border: 0;
+}
+
+/* teaser card variation */
+.cards.teaser-card{
+  width:325px;
+  height: 338px;
+  position: relative;
+}
+
+.cards.teaser-card .cards-card-body{
+  background: #124E57 0% 0% no-repeat padding-box;
+  box-shadow: 10px 10px 40px var(--box-shadow);
+  width: auto;
+  height: auto;
+  margin: 0%;
+  padding: 35px 20px;
+  position: absolute; 
+  bottom: 0;
+  top: 0;
+  opacity: 0; 
+  transition: 0.6s;
+  text-align: left; 
+}
+
+.cards.teaser-card:hover .cards-card-body{
+  opacity: 1;       
+}
+
+.cards.teaser-card .cards-card-body p{
+  max-height: 200px;
+  overflow: hidden;
+  font: normal normal normal 12px/20px var(--body-font-family);
+  color: var(--color-white);
+}
+
+.cards.teaser-card .cards-card-body u{
+  text-align: center;
+  text-transform: uppercase;
+  font: normal normal bold 14px/24px var(--body-font-family);
+  color: var(--link-color-red);
+  cursor: pointer;
+}
+
+/* Cards (notification variation) */
+.cards.notification {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.cards.notification > ul {
+  grid-template-columns: auto;
+  box-shadow: 5px 5px 10px var(--card-box-shadow);
+  position: relative;
+  border-radius: 10px;
+}
+
+.cards.notification > ul > li .icon-close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cards.notification > ul > li {
+  padding: 25px;
+}
+
+.cards.notification > ul > li .cards-card-body picture img {
+  width: 252px;
+  aspect-ratio: auto 252 / 88;
+  height: 88px;
+}
+
+@media (width >= 900px) {
+  .cards.one-col > ul {
+    grid-template-columns: repeat(1, 300px);
+    justify-content: center;
+  }
+
+  .cards.two-cols > ul {
+    grid-template-columns: repeat(2, 300px);
+    justify-content: center;
+  }
+
+  .cards.three-cols > ul {
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+  }
+}
+
+@media (width >= 1200px) {
+  .cards.four-cols > ul {
+    grid-template-columns: repeat(4, 300px);
+    justify-content: center;
+  }
+}

@@ -1,0 +1,367 @@
+/* Hide up/down arrow for number type */
+.form input::-webkit-outer-spin-button,
+.form  input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.form input[type='number'] {
+  appearance: textfield;
+}
+
+.form .tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.form .tooltip .tooltip-text {
+  visibility: hidden;
+  width: 250px;
+  background-color: var(--color-white);
+  line-height: 1.2em;
+  text-align: left;
+  border: 1px solid var(--color-brand-subtitle);
+  border-radius: 6px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+}
+
+.form .tooltip::after {
+  content: "i";
+  padding: 1px;
+  display: inline-block;
+  background-color: var(--color-grey-dark);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  text-align: center;
+  color: var(--color-white);
+  font-size: 1rem;
+  line-height: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.form .tooltip:hover .tooltip-text {
+  visibility: visible;
+}
+
+.form .field-wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  align-items: center;
+  padding: 10px;
+  color: var(--color-form-body);
+}
+
+.form .submit-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.form .hidden-wrapper {
+  display: none;
+}
+
+.form .plaintext-wrapper {
+  color: var(--color-grey-darker);
+}
+
+.retirement-calculator h2,
+.retirement-calculator h3,
+.retirement-calculator p {
+  margin: 0;
+}
+
+.form .heading-wrapper h2 {
+  border-bottom: 1px solid var(--color-grey-darker);
+  padding-bottom: 10px;
+  font-size: var(--heading-font-size-xl);
+}
+
+.form form > .field-wrapper {
+  width: 375px;
+}
+
+.form fieldset {
+  display: grid;
+  grid-auto-flow: row;
+  gap: 8px;
+  border: none;
+  padding: 0;
+}
+
+@media (width >= 900px) {
+  .form fieldset {
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 16px;
+  }
+
+  .form form > .field-wrapper {
+    width: 508px;
+  }
+}
+
+.form fieldset > legend {
+  font-weight: 700;
+  font-size: var(--body-font-size-xs-3);
+}
+
+.form label {
+  font-weight: 700;
+  font-size: var(--body-font-size-xs-3);
+  margin-bottom: 8px;
+}
+
+.form input,
+.form select,
+.form textarea {
+  font-size: var(--body-font-size-xs-3);
+  width: 100%;
+  max-width: 50rem;
+  display: block;
+  padding: 20px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  border: 1px solid var(--color-brand-subtitle);
+  background: var(--color-white) 0% 0% no-repeat padding-box;
+  box-shadow: 0 1px 5px #00000029;
+}
+
+.form textarea {
+  resize: vertical;
+}
+
+.form .selection-wrapper input {
+  width: 16px;
+}
+
+.form .selection-wrapper label {
+  margin-bottom: 0;
+}
+
+.form .button {
+  font-size: var(--body-font-size-xs-1);
+  margin-left: 15px;
+}
+
+.form .field-wrapper.selection-wrapper {
+  grid-auto-flow: column;
+  justify-content: start;
+  gap: 16px;
+}
+
+.form .field-wrapper > label {
+  order: -1;
+}
+
+.form .field-wrapper.selection-wrapper > label {
+  order: 1;
+}
+
+.form .message-wrapper p.success {
+  color: var(--color-brand-subtitle);
+}
+
+.form .message-wrapper p.error {
+  color: var(--color-info-accent);
+}
+
+.form input[required] + label::after {
+  content: "*";
+  color: var(--color-info-accent);
+  margin-inline-start: 1ch;
+}
+
+.form input.disabled,
+.form .disabled input {
+  opacity: 0.5;
+}
+
+.form input.invalid:required:invalid,
+.form input.invalid:required:focus-visible {
+  background: #FFF5F4 0% 0% no-repeat padding-box;
+  border: 1px solid var(--color-info-accent);
+}
+
+.form .toggle-wrapper .switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  height: 24px;
+}
+
+.form .toggle-wrapper input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.form .toggle-wrapper .slider {
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  background-color: var(--color-grey-dark);
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.form .toggle-wrapper .slider::before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: var(--color-white);
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+.form .toggle-wrapper input:checked + .slider {
+  background-color: var(--link-color);
+}
+
+.form .toggle-wrapper input:focus + .slider {
+  outline: 2px solid var(--link-color);
+  outline-offset: 2px;
+}
+
+.form .toggle-wrapper input:checked + .slider::before {
+  transform: translateX(24px);
+}
+
+/* helper class */
+.form .hide {
+  display: none;
+}
+
+/* Holiday calculator form */
+@media (width >= 900px) {
+  .holiday-calculator form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .holiday-calculator form .field-wrapper {
+    flex: 1;
+  }
+
+  .holiday-calculator form .field-wrapper:nth-child(2) {
+    flex-basis: 100%;
+  }
+
+  .holiday-calculator form .field-wrapper:first-child {
+    flex-basis: 100%;
+  }
+
+  .holiday-calculator [name='colFull'] {
+    width: 50%;
+  }
+}
+
+@media (width >=900px) {
+  .wedding-calculator form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .wedding-calculator form .field-wrapper {
+    flex: 1;
+  }
+
+  .wedding-calculator form .field-wrapper:first-child,
+  .wedding-calculator form .field-wrapper:nth-child(2) {
+    flex-basis: 100%;
+  }
+
+  .wedding-calculator [name='colFull'] {
+    width: 50%;
+  }
+
+  .wedding-calculator form fieldset#colfull-tab {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .wedding-calculator form fieldset#colfull-tab .field-wrapper {
+    flex-basis: 100%;
+  }
+
+  .wedding-calculator form fieldset#colfull-tab .field-wrapper label {
+    display: none;
+  }
+
+  .wedding-calculator form fieldset#colfull-tab input[type="button"] {
+    background-color: var(--link-color);
+    cursor: pointer;
+    color: var(--color-white);
+  }
+
+  .wedding-calculator form fieldset#colfull-tab input[type="button"].active {
+    background-color: var(--color-info-accent);
+    cursor: pointer;
+  }
+}
+
+/* education calculator form */
+@media (width >= 900px) {
+  .education-calculator form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .education-calculator form .field-wrapper {
+    flex: 1;
+  }
+
+  .education-calculator form .field-wrapper:first-child {
+    flex-basis: 100%;
+  }
+
+  .education-calculator [name='colFull'] {
+    width: 50%;
+  }
+}
+
+/* TODO: CSS optimization for retirement */
+@media (width >= 900px) {
+  .retirement-calculator form {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+.retirement-calculator fieldset[name='colFull1'] {
+  text-align: center;
+}
+
+.form .button a:any-link {
+  font-family: var(--heading-font-family);
+  font-style: normal;
+  font-weight: normal;
+  font-size: var(--body-font-size-xs-1);
+  display: inline-block;
+  box-sizing: border-box;
+  text-decoration: none;
+  padding: 8px 22px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--color-white);
+  background-color: var(--color-info-accent-accessible);
+  margin: 16px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border-radius: 30px;
+  border: 1px solid var(--color-info-accent-accessible);
+}
+
+.form .button a:hover, 
+.form .button a:focus {
+  background-color: var(--color-info-accent-hover);
+  cursor: pointer;
+  border: 1px solid var(--color-info-accent-hover);
+}

@@ -1,0 +1,75 @@
+.sticky-container {
+    box-sizing: border-box;
+}
+
+.sticky-container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.section.sticky-container {
+    position: sticky;
+    top: var(--nav-height);
+    padding: 0;
+    z-index: var(--z-index-header-sticky);
+    min-height: 80px;
+}
+
+.sticky-container .sticky.block {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-brand-title);
+    border-top: 1px solid var(--color-brand-title);
+}
+
+.sticky-container .sticky.block.position-fixed {
+    position: fixed;
+    top: 125px;
+    z-index: var(--z-index-header);
+}
+
+.sticky-container .sticky.block div {
+    width: 100%;
+}
+
+.sticky-container .sticky.block div div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.sticky-container .sticky.block div div.position-fixed {
+    position: fixed;
+}
+
+.sticky .button-container > a {
+    font-family: var(--body-font-family);
+}
+
+@media (width <=600px) {
+    .sticky-container .sticky.block div div {
+        justify-content: flex-start;
+        overflow: scroll hidden;
+    }
+}
+
+.sticky-container .sticky.block div div p.button-container a {
+    background: none;
+    border: 0;
+    color: #000;
+    border-radius: 0;
+}
+
+.sticky-container .default-content-wrapper h1,
+.sticky-container .default-content-wrapper h2,
+.sticky-container .default-content-wrapper h3,
+.sticky-container .default-content-wrapper h4,
+.sticky-container .default-content-wrapper h5,
+.sticky-container .default-content-wrapper h6 {
+    scroll-padding-top: 4rem;
+    scroll-margin-top: 215px;
+}

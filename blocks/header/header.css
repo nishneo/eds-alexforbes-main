@@ -1,0 +1,823 @@
+@media (width >600px) {
+  header ul {
+    margin: 0;
+  }
+
+  header li {
+    list-style: none;
+  }
+
+  header .nav-wrapper:has(.position-fixed) {
+    width: 100%;
+    height: 125px;
+  }
+
+  header .position-fixed {
+    position: fixed;
+    width: 100%;
+    opacity: 1;
+    top: 0;
+    z-index: 2;
+  }
+
+  header .nav-first-level {
+    background: var(--link-color);
+    font-size: 12px;
+    padding: 0;
+    height: 45px;
+    border-top: 3px solid var(--color-info-accent-down);
+    display: flex !important;
+    box-sizing: border-box;
+  }
+
+  /* Breacrumbs */
+  header .breadcrumbs {
+    padding: 150px var(--space-l) 0 var(--space-l);
+    max-width: var(--max-width-xxlarge);
+    margin: 0 auto 20px;
+  }
+
+  header .breadcrumbs ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  header .breadcrumbs li {
+    display: inline-block;
+    margin-right: 15px;
+  }
+
+  header .breadcrumbs a {
+    text-decoration: none;
+  }
+
+  header .breadcrumbs li::after {
+    content: '\203A';
+    margin-left: 15px;
+  }
+
+  header .breadcrumbs li.active::after {
+    content: '';
+  }
+
+  header .nav-first-level .section-container {
+    align-items: end;
+    width: auto;
+    justify-content: space-between !important;
+    display: flex;
+  }
+
+  header .nav-first-level .section-container .default-content-wrapper {
+    align-items: center;
+    display: flex;
+  }
+
+  header .second-level .second-level-container .nav-buttons {
+    padding-left: 30px;
+  }
+
+  header .second-level .second-level-container .nav-buttons ul,
+  header .second-level .second-level-container .nav-buttons li {
+    list-style: none;
+  }
+
+  header .second-level .second-level-container .nav-buttons ul {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  header .nav-first-level .section-container .default-content-wrapper ul {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  header .nav-first-level .section-container .default-content-wrapper ul li {
+    text-align: center;
+    padding: 0 10px;
+    margin: 0;
+  }
+
+  header .nav-first-level .section-container .default-content-wrapper ul li a {
+    font-style: normal;
+    color: var(--color-white);
+    padding-right: 10px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  header .second-level {
+    height: 80px;
+    transition: all 0.5s;
+    z-index: 997;
+    background: var(--link-color);
+    border-top: 1px solid var(--color-info-accent-down);
+    align-items: center;
+    display: flex;
+    width: 100%;
+  }
+
+  header .second-level .second-level-container {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1320px;
+    width: 100%;
+    padding-right: calc(1.5rem * 0.5);
+    padding-left: calc(1.5rem * 0.5);
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  header .second-level .second-level-container .nav-logo img {
+    object-fit: contain;
+  }
+
+  header .second-level .second-level-container .nav-menu-item {
+    display: flex;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li {
+    color: var(--color-white);
+    white-space: nowrap;
+    padding: 10px 0 10px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    cursor: pointer;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li:has(ul)::after {
+    content: "›";
+    transform: rotate(90deg);
+    font-size: 20px;
+    margin-left: 8px;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li:hover {
+    color: var(--link-color-red);
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-white);
+    white-space: nowrap;
+    transition: 0.3s;
+  }
+
+  header .nav-first-level .section-container .default-content-wrapper ul li a:hover {
+    color: var(--link-color-red);
+    text-decoration: none;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li a:hover {
+    color: var(--link-color-red);
+    text-decoration: none;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul {
+    position: absolute;
+    left: 28px;
+    top: calc(100% + 30px);
+    margin: 0;
+    padding: 10px 20px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: var(--box-shadow-2);
+    transition: 0.3s;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-info-accent-down);
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul .third-ul {
+    position: absolute;
+    left: 100px;
+    top: 0;
+    margin: 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: var(--box-shadow-2);
+    transition: 0.3s;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-info-accent-down);
+    width: auto;
+    padding: 10px 20px;
+    min-width: 200px;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li {
+    min-width: 200px;
+    color: var(--color-white);
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li:has(ul)::after {
+    content: "›";
+    margin-left: 5px;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li:hover {
+    color: var(--link-color-red);
+    text-decoration: none;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li .third-ul li:hover {
+    color: var(--link-color-red);
+    text-decoration: none;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li .third-ul li:hover a {
+    color: var(--link-color-red);
+    text-decoration: none;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li:hover ul.second-ul {
+    opacity: 1;
+    top: 100%;
+    visibility: visible;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li:hover ul.second-ul>li:hover ul.third-ul {
+    opacity: 1;
+    left: 200px;
+    visibility: visible;
+  }
+
+
+  header .second-level .second-level-container .nav-buttons .button {
+    height: unset;
+    margin: 0;
+    border: none;
+  }
+
+  header .nav-hamburger {
+    display: none;
+  }
+}
+
+header li {
+  list-style: none;
+}
+
+header .nav-wrapper:has(.position-fixed) {
+  width: 100%;
+}
+
+header .position-fixed {
+  position: fixed;
+  width: 100%;
+  opacity: 1;
+  top: 0;
+  z-index: var(--z-index-header);
+}
+
+header .nav-first-level {
+  background: var(--link-color);
+  font-size: 12px;
+  padding: 0;
+  height: 45px;
+  border-top: 3px solid var(--color-info-accent-down);
+  display: flex !important;
+  box-sizing: border-box;
+}
+
+header .nav-first-level .section-container {
+  align-items: end;
+  width: auto;
+  justify-content: space-between !important;
+  display: flex;
+}
+
+header .nav-first-level .section-container .default-content-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+header .second-level .second-level-container .nav-buttons {
+  padding-left: 30px;
+}
+
+header ul.first-ul-login-dropdown::before {
+  content: '|';
+  color: transparent;
+  height: 30px;
+  width: 0;
+  border-left: 1px solid var(--color-border);
+}
+
+header .second-level .second-level-container .nav-buttons ul,
+header .second-level .second-level-container .nav-buttons li {
+  list-style: none;
+}
+
+header .second-level .second-level-container .nav-buttons ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+header .nav-first-level .section-container .default-content-wrapper ul {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+header .nav-first-level .section-container .default-content-wrapper ul li {
+  text-align: center;
+  padding: 0 10px;
+  margin: 0;
+}
+
+header .nav-first-level .section-container .default-content-wrapper ul li a {
+  font-style: normal;
+  color: var(--color-white);
+  padding-right: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+header .second-level {
+  height: 80px;
+  transition: all 0.5s;
+  z-index: 997;
+  background: var(--link-color);
+  border-top: 1px solid var(--color-info-accent-down);
+  align-items: center;
+  display: flex;
+  width: 100%;
+}
+
+header .second-level .second-level-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1320px;
+  width: 100%;
+  padding-right: calc(1.5rem * 0.5);
+  padding-left: calc(1.5rem * 0.5);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+header .second-level .second-level-container .nav-logo img {
+  object-fit: contain;
+}
+
+header .second-level .second-level-container .nav-menu-item {
+  display: flex;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+  align-items: center;
+  flex-direction: row;
+  gap: 20px;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li {
+  color: var(--color-white);
+  white-space: nowrap;
+  padding: 10px 0 10px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li:has(ul)::after {
+  content: "›";
+  transform: rotate(90deg);
+  font-size: 20px;
+  margin-left: 8px;
+}
+
+header .second-level .second-level-container .nav-buttons ul.first-ul-login-dropdown>li {
+  color: var(--color-white);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  cursor: default;
+  align-self: stretch;
+  padding: inherit;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li:hover {
+  color: var(--link-color-red);
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--color-white);
+  white-space: nowrap;
+  transition: 0.3s;
+}
+
+header .nav-first-level .section-container .default-content-wrapper ul li a:hover {
+  color: var(--link-color-red);
+  text-decoration: none;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li a:hover {
+  color: var(--link-color-red);
+  text-decoration: none;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul {
+  position: absolute;
+  left: 28px;
+  top: calc(100% + 30px);
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: var(--box-shadow-2);
+  transition: 0.3s;
+  border-radius: 4px;
+  display: flex;
+  background-color: var(--color-white);
+  flex-direction: column;
+  height: unset;
+  max-height: unset;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul .third-ul {
+  position: absolute;
+  left: 200px;
+  top: 0;
+  margin: 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: var(--box-shadow-2);
+  transition: 0.3s;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  width: 100%;
+  padding: 10px 0;
+  height: unset;
+  max-height: unset;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li {
+  min-width: 200px;
+  color: var(--color-brand-title);
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li:has(ul)::after {
+  content: "›";
+  margin-left: 5px;
+}
+
+header .second-level .second-level-container .nav-buttons ul.first-ul-login-dropdown>li ul.second-ul-login-dropdown>li {
+  color: var(--color-brand-title);
+  align-items: center;
+  display: flex;
+  justify-content: left;
+  height: auto;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul .third-ul > li {
+  color: var(--color-brand-title);
+  padding: 10px;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li:hover {
+  color: var(--link-color-red);
+  text-decoration: none;
+}
+
+header .second-level .second-level-container .nav-buttons ul.first-ul-login-dropdown>li ul.second-ul-login-dropdown>li a {
+  color: var(--color-brand-title);
+  padding: 10px;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul .third-ul > li > a {
+  color: var(--color-brand-title);
+}
+
+header .second-level .second-level-container .nav-buttons ul.first-ul-login-dropdown>li ul.second-ul-login-dropdown>li a:hover {
+  color: var(--link-color-red);
+  text-decoration: none;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li .third-ul li:hover {
+  color: var(--link-color-red);
+  text-decoration: none;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li .third-ul li:hover a {
+  color: var(--link-color-red);
+  text-decoration: none;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li:hover ul.second-ul {
+  opacity: 1;
+  top: 100%;
+  visibility: visible;
+}
+
+header .second-level .second-level-container .nav-menu-item ul.first-ul>li:hover ul.second-ul>li:hover ul.third-ul {
+  opacity: 1;
+  left: 200px;
+  visibility: visible;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  max-height: unset;
+}
+
+
+header .second-level .second-level-container .nav-buttons .button {
+  height: unset;
+  margin: 0;
+  border: none;
+}
+
+header .nav-hamburger {
+  display: none;
+}
+
+header .second-level .second-level-container .nav-buttons ul.first-ul-login-dropdown {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.second-level .second-level-container .nav-buttons ul.first-ul-login-dropdown>li ul.second-ul-login-dropdown {
+  position: absolute;
+  top: 60px;
+  margin: 0;
+  padding: 10px 0;
+  z-index: 99;
+  opacity: 0;
+  visibility: hidden;
+  box-shadow: var(--box-shadow-2);
+  transition: 0.3s;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column; 
+  background-color: var(--color-white);
+  min-height: 80px;
+  min-width: 160px;
+}
+
+header .second-level .second-level-container .nav-buttons ul.first-ul-login-dropdown>li:hover ul.second-ul-login-dropdown {
+  opacity: 1;
+  visibility: visible;
+}
+
+header .second-level .second-level-container .nav-buttons ul.first-ul-login-dropdown>li.greeting-button>ul.second-ul-login-dropdown {
+  gap: 0;
+}
+
+@media (width <= 600px) {
+  header .breadcrumbs {
+    display: none;
+  }
+
+  .header-wrapper * {
+    box-sizing: border-box;
+    list-style: none;
+  }
+
+  .header-wrapper .nav-wrapper .nav-hamburger {
+    position: fixed;
+    z-index: var(--z-index-header);
+    height: var(--nav-height);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--link-color);
+    justify-content: space-between;
+  }
+
+  .header-wrapper .nav-wrapper .nav-hamburger img.mobile-logo {
+    width: 150px;
+    object-fit: cover;
+    height: auto;
+    display: flex;
+    margin-right: 20px;
+  }
+
+  .header-wrapper .nav-wrapper .nav-hamburger button {
+    background: none;
+    border: 0;
+    font-size: 40px;
+  }
+
+  .header-wrapper .nav-wrapper nav.position-fixed {
+    position: fixed;
+    top: var(--nav-height);
+    height: 100vh;
+    width: 100vw;
+    z-index: var(--z-index-header);
+    background: var(--color-brand-heading);
+    transform: translateX(0);
+    transition: transform 0.3s ease;
+  }
+
+  .header-wrapper .nav-wrapper nav.position-fixed * {
+    max-width: 100%;
+    margin: 0;
+    height: auto;
+  }
+
+  .header-wrapper .nav-wrapper nav.position-fixed.sm-hidden {
+    transform: translateX(-100%);
+  }
+
+  .header-wrapper .nav-wrapper nav.nav {
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  header .nav-first-level {
+    border-top: 1px solid var(--color-info-accent-down);
+  }
+
+  header ul.first-ul-login-dropdown::before {
+    display: none;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .nav-first-level ul {
+    padding: 5px 0;
+    padding-left: 12px;
+    flex-wrap: wrap;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .nav-first-level ul li {
+    color: var(--color-white);
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 0;
+    padding: 5px 10px 5px 15px;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .nav-first-level ul li a {
+    color: inherit;
+    font-size: inherit;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container .nav-logo {
+    display: none;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container .nav-buttons a.button {
+    background: none;
+    border: 0;
+    padding: 0;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container ul {
+    padding: 5px 0;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li {
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container ul li {
+    color: var(--color-white);
+    font-size: 14px;
+    line-height: 1.3;
+    margin: 0;
+    padding: 5px 10px 5px 15px;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container ul li a {
+    color: inherit;
+    font-size: inherit;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container ul ul {
+    border: 0;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container li:has(ul) {
+    position: relative;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container li:has(>ul.active)::before{
+    transform: rotate(-90deg);
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container li:has(>.second-ul) .second-ul {
+    display: none;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container li:has(>.second-ul) .second-ul.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container li:has(>.second-ul) .second-ul>li:has(>.third-ul) .third-ul {
+    display: none;
+  }
+
+  .header-wrapper .nav-wrapper nav.nav .second-level .second-level-container li:has(>.second-ul) .second-ul>li:has(>.third-ul) .third-ul.active {
+    display: block;
+    position: static;
+    margin-top: 20px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  header .second-level .second-level-container {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    max-height: unset;
+  }
+
+  header .second-level .second-level-container .nav-buttons {
+    padding: 0;
+    border: 0;
+  }
+
+  header .second-level .second-level-container .nav-menu-item,
+  header .second-level .second-level-container .nav-menu-item .section-container {
+    width: 100%;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul {
+    position: static;
+    margin-top: 20px;
+    width: 100%;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li:has(ul)::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  header .second-level .second-level-container .nav-menu-item ul.first-ul>li ul.second-ul>li:has(ul)::after {
+    position: absolute;
+    right: 10px;
+  }
+}
